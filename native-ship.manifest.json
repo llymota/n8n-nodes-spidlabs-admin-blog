@@ -1,0 +1,1581 @@
+{
+  "schemaVersion": 2,
+  "style": "programmatic",
+  "names": {
+    "typeName": "SpidlabsApi",
+    "nodeName": "spidlabsApi",
+    "descriptionName": "spidlabsApi",
+    "hasTriggers": false,
+    "nodeFiles": [
+      "dist/nodes/SpidlabsApi/SpidlabsApi.node.js"
+    ],
+    "credentialFiles": [
+      "dist/credentials/SpidlabsApiApi.credentials.js"
+    ]
+  },
+  "target": {
+    "targetN8nRange": ">=1.110 <2.0",
+    "declarative": true,
+    "programmatic": true,
+    "fullVersioning": true
+  },
+  "versioning": "light",
+  "versions": [
+    1
+  ],
+  "diagnostics": [],
+  "operationContracts": [
+    {
+      "operationId": "createBlogDraft",
+      "method": "POST",
+      "path": "/api/blogs",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "authors",
+            "inputName": "authors",
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "blog_content",
+            "inputName": "blog_content",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "canonical_url",
+            "inputName": "canonical_url",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "category",
+            "inputName": "category",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "faq_items",
+            "inputName": "faq_items",
+            "type": "array",
+            "required": true
+          },
+          {
+            "name": "featured_image",
+            "inputName": "featured_image",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "featured_image_alt",
+            "inputName": "featured_image_alt",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "focus_keyword",
+            "inputName": "focus_keyword",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "og_description",
+            "inputName": "og_description",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "og_image",
+            "inputName": "og_image",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "og_image_alt",
+            "inputName": "og_image_alt",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "og_title",
+            "inputName": "og_title",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "reading_time",
+            "inputName": "reading_time",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "robots_follow",
+            "inputName": "robots_follow",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "robots_index",
+            "inputName": "robots_index",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "schema_type",
+            "inputName": "schema_type",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "seo_description",
+            "inputName": "seo_description",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "seo_keywords",
+            "inputName": "seo_keywords",
+            "type": "array",
+            "required": true
+          },
+          {
+            "name": "seo_title",
+            "inputName": "seo_title",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "short_description",
+            "inputName": "short_description",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "slug",
+            "inputName": "slug",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "title",
+            "inputName": "title",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "tldr",
+            "inputName": "tldr",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "twitter_description",
+            "inputName": "twitter_description",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "twitter_image",
+            "inputName": "twitter_image",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "twitter_image_alt",
+            "inputName": "twitter_image_alt",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "twitter_title",
+            "inputName": "twitter_title",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "message",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Invalid request."
+        },
+        {
+          "status": "401",
+          "title": "Missing, invalid, revoked, or expired API key."
+        },
+        {
+          "status": "409",
+          "title": "A blog post already uses the requested slug."
+        },
+        {
+          "status": "500",
+          "title": "Internal API error."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createBlogDraft",
+        "method": "POST",
+        "path": "/api/blogs",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "POST",
+          "url": "=/api/blogs",
+          "query": [],
+          "body": [
+            {
+              "name": "authors",
+              "source": "additionalFields"
+            },
+            {
+              "name": "blog_content",
+              "source": "parameter"
+            },
+            {
+              "name": "canonical_url",
+              "source": "parameter"
+            },
+            {
+              "name": "category",
+              "source": "parameter"
+            },
+            {
+              "name": "faq_items",
+              "source": "parameter"
+            },
+            {
+              "name": "featured_image",
+              "source": "parameter"
+            },
+            {
+              "name": "featured_image_alt",
+              "source": "parameter"
+            },
+            {
+              "name": "focus_keyword",
+              "source": "parameter"
+            },
+            {
+              "name": "og_description",
+              "source": "parameter"
+            },
+            {
+              "name": "og_image",
+              "source": "parameter"
+            },
+            {
+              "name": "og_image_alt",
+              "source": "parameter"
+            },
+            {
+              "name": "og_title",
+              "source": "parameter"
+            },
+            {
+              "name": "reading_time",
+              "source": "parameter"
+            },
+            {
+              "name": "robots_follow",
+              "source": "additionalFields"
+            },
+            {
+              "name": "robots_index",
+              "source": "additionalFields"
+            },
+            {
+              "name": "schema_type",
+              "source": "parameter"
+            },
+            {
+              "name": "seo_description",
+              "source": "parameter"
+            },
+            {
+              "name": "seo_keywords",
+              "source": "parameter"
+            },
+            {
+              "name": "seo_title",
+              "source": "parameter"
+            },
+            {
+              "name": "short_description",
+              "source": "parameter"
+            },
+            {
+              "name": "slug",
+              "source": "parameter"
+            },
+            {
+              "name": "title",
+              "source": "parameter"
+            },
+            {
+              "name": "tldr",
+              "source": "parameter"
+            },
+            {
+              "name": "twitter_description",
+              "source": "parameter"
+            },
+            {
+              "name": "twitter_image",
+              "source": "parameter"
+            },
+            {
+              "name": "twitter_image_alt",
+              "source": "parameter"
+            },
+            {
+              "name": "twitter_title",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "message",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Invalid request."
+          },
+          {
+            "status": "401",
+            "title": "Missing, invalid, revoked, or expired API key."
+          },
+          {
+            "status": "409",
+            "title": "A blog post already uses the requested slug."
+          },
+          {
+            "status": "500",
+            "title": "Internal API error."
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter authors",
+          "advanced parameter faq_items",
+          "advanced parameter seo_keywords"
+        ]
+      }
+    },
+    {
+      "operationId": "deleteBlog",
+      "method": "DELETE",
+      "path": "/api/blogs/{id}",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "message",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Invalid request."
+        },
+        {
+          "status": "401",
+          "title": "Missing, invalid, revoked, or expired API key."
+        },
+        {
+          "status": "404",
+          "title": "Blog post not found."
+        },
+        {
+          "status": "500",
+          "title": "Internal API error."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deleteBlog",
+        "method": "DELETE",
+        "path": "/api/blogs/{id}",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "DELETE",
+          "url": "=/api/blogs/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "message",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Invalid request."
+          },
+          {
+            "status": "401",
+            "title": "Missing, invalid, revoked, or expired API key."
+          },
+          {
+            "status": "404",
+            "title": "Blog post not found."
+          },
+          {
+            "status": "500",
+            "title": "Internal API error."
+          }
+        ],
+        "unsupportedSemantics": []
+      }
+    },
+    {
+      "operationId": "getBlogById",
+      "method": "GET",
+      "path": "/api/blogs/{id}",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "401",
+          "title": "Missing, invalid, revoked, or expired API key."
+        },
+        {
+          "status": "404",
+          "title": "Blog post not found."
+        },
+        {
+          "status": "500",
+          "title": "Internal API error."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getBlogById",
+        "method": "GET",
+        "path": "/api/blogs/{id}",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "GET",
+          "url": "=/api/blogs/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "401",
+            "title": "Missing, invalid, revoked, or expired API key."
+          },
+          {
+            "status": "404",
+            "title": "Blog post not found."
+          },
+          {
+            "status": "500",
+            "title": "Internal API error."
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "getBlogById",
+        "cursorParameter": "updated_at",
+        "defaultPollInterval": "5m"
+      }
+    },
+    {
+      "operationId": "listBlogs",
+      "method": "GET",
+      "path": "/api/blogs",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "status",
+          "inputName": "status",
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "array"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Invalid request."
+        },
+        {
+          "status": "401",
+          "title": "Missing, invalid, revoked, or expired API key."
+        },
+        {
+          "status": "500",
+          "title": "Internal API error."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listBlogs",
+        "method": "GET",
+        "path": "/api/blogs",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "GET",
+          "url": "=/api/blogs",
+          "query": [
+            {
+              "name": "status",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "array"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Invalid request."
+          },
+          {
+            "status": "401",
+            "title": "Missing, invalid, revoked, or expired API key."
+          },
+          {
+            "status": "500",
+            "title": "Internal API error."
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "listBlogs",
+        "cursorParameter": "created_at",
+        "defaultPollInterval": "5m"
+      }
+    },
+    {
+      "operationId": "publishBlog",
+      "method": "POST",
+      "path": "/api/blogs/{id}/publish",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "message",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Invalid request."
+        },
+        {
+          "status": "401",
+          "title": "Missing, invalid, revoked, or expired API key."
+        },
+        {
+          "status": "404",
+          "title": "Blog post not found."
+        },
+        {
+          "status": "500",
+          "title": "Internal API error."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "publishBlog",
+        "method": "POST",
+        "path": "/api/blogs/{id}/publish",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "POST",
+          "url": "=/api/blogs/{{$parameter[\"id\"]}}/publish",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "message",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Invalid request."
+          },
+          {
+            "status": "401",
+            "title": "Missing, invalid, revoked, or expired API key."
+          },
+          {
+            "status": "404",
+            "title": "Blog post not found."
+          },
+          {
+            "status": "500",
+            "title": "Internal API error."
+          }
+        ],
+        "unsupportedSemantics": []
+      }
+    },
+    {
+      "operationId": "updateBlog",
+      "method": "PATCH",
+      "path": "/api/blogs/{id}",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "authors",
+            "inputName": "authors",
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "blog_content",
+            "inputName": "blog_content",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "canonical_url",
+            "inputName": "canonical_url",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "category",
+            "inputName": "category",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "faq_items",
+            "inputName": "faq_items",
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "featured_image",
+            "inputName": "featured_image",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "featured_image_alt",
+            "inputName": "featured_image_alt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "focus_keyword",
+            "inputName": "focus_keyword",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "og_description",
+            "inputName": "og_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "og_image",
+            "inputName": "og_image",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "og_image_alt",
+            "inputName": "og_image_alt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "og_title",
+            "inputName": "og_title",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "reading_time",
+            "inputName": "reading_time",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "robots_follow",
+            "inputName": "robots_follow",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "robots_index",
+            "inputName": "robots_index",
+            "type": "boolean",
+            "required": false
+          },
+          {
+            "name": "schema_type",
+            "inputName": "schema_type",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "seo_description",
+            "inputName": "seo_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "seo_keywords",
+            "inputName": "seo_keywords",
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "seo_title",
+            "inputName": "seo_title",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "short_description",
+            "inputName": "short_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "slug",
+            "inputName": "slug",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "title",
+            "inputName": "title",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "tldr",
+            "inputName": "tldr",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "twitter_description",
+            "inputName": "twitter_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "twitter_image",
+            "inputName": "twitter_image",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "twitter_image_alt",
+            "inputName": "twitter_image_alt",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "twitter_title",
+            "inputName": "twitter_title",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "message",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Invalid request."
+        },
+        {
+          "status": "401",
+          "title": "Missing, invalid, revoked, or expired API key."
+        },
+        {
+          "status": "404",
+          "title": "Blog post not found."
+        },
+        {
+          "status": "409",
+          "title": "A blog post already uses the requested slug."
+        },
+        {
+          "status": "500",
+          "title": "Internal API error."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "updateBlog",
+        "method": "PATCH",
+        "path": "/api/blogs/{id}",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "PATCH",
+          "url": "=/api/blogs/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [
+            {
+              "name": "authors",
+              "source": "additionalFields"
+            },
+            {
+              "name": "blog_content",
+              "source": "additionalFields"
+            },
+            {
+              "name": "canonical_url",
+              "source": "additionalFields"
+            },
+            {
+              "name": "category",
+              "source": "additionalFields"
+            },
+            {
+              "name": "faq_items",
+              "source": "additionalFields"
+            },
+            {
+              "name": "featured_image",
+              "source": "additionalFields"
+            },
+            {
+              "name": "featured_image_alt",
+              "source": "additionalFields"
+            },
+            {
+              "name": "focus_keyword",
+              "source": "additionalFields"
+            },
+            {
+              "name": "og_description",
+              "source": "additionalFields"
+            },
+            {
+              "name": "og_image",
+              "source": "additionalFields"
+            },
+            {
+              "name": "og_image_alt",
+              "source": "additionalFields"
+            },
+            {
+              "name": "og_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "reading_time",
+              "source": "additionalFields"
+            },
+            {
+              "name": "robots_follow",
+              "source": "additionalFields"
+            },
+            {
+              "name": "robots_index",
+              "source": "additionalFields"
+            },
+            {
+              "name": "schema_type",
+              "source": "additionalFields"
+            },
+            {
+              "name": "seo_description",
+              "source": "additionalFields"
+            },
+            {
+              "name": "seo_keywords",
+              "source": "additionalFields"
+            },
+            {
+              "name": "seo_title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "short_description",
+              "source": "additionalFields"
+            },
+            {
+              "name": "slug",
+              "source": "additionalFields"
+            },
+            {
+              "name": "title",
+              "source": "additionalFields"
+            },
+            {
+              "name": "tldr",
+              "source": "additionalFields"
+            },
+            {
+              "name": "twitter_description",
+              "source": "additionalFields"
+            },
+            {
+              "name": "twitter_image",
+              "source": "additionalFields"
+            },
+            {
+              "name": "twitter_image_alt",
+              "source": "additionalFields"
+            },
+            {
+              "name": "twitter_title",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "message",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Invalid request."
+          },
+          {
+            "status": "401",
+            "title": "Missing, invalid, revoked, or expired API key."
+          },
+          {
+            "status": "404",
+            "title": "Blog post not found."
+          },
+          {
+            "status": "409",
+            "title": "A blog post already uses the requested slug."
+          },
+          {
+            "status": "500",
+            "title": "Internal API error."
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter authors",
+          "advanced parameter faq_items",
+          "advanced parameter seo_keywords"
+        ]
+      }
+    },
+    {
+      "operationId": "submitContactForm",
+      "method": "POST",
+      "path": "/api/contact",
+      "serverId": "documentServer1HttpsSpidlabsCom",
+      "authentication": [
+        {
+          "schemes": [
+            "ApiKeyAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "countryCode",
+            "inputName": "countryCode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "description",
+            "inputName": "description",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "email",
+            "inputName": "email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "name",
+            "inputName": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "phone",
+            "inputName": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "website",
+            "inputName": "website",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "delivered",
+            "type": "boolean"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "ok",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "delivered",
+          "message",
+          "ok"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Invalid contact form data."
+        },
+        {
+          "status": "500",
+          "title": "Contact webhook is not configured."
+        },
+        {
+          "status": "502",
+          "title": "The contact webhook rejected the request or could not be reached."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "submitContactForm",
+        "method": "POST",
+        "path": "/api/contact",
+        "serverId": "documentServer1HttpsSpidlabsCom",
+        "request": {
+          "method": "POST",
+          "url": "=/api/contact",
+          "query": [],
+          "body": [
+            {
+              "name": "countryCode",
+              "source": "additionalFields"
+            },
+            {
+              "name": "description",
+              "source": "parameter"
+            },
+            {
+              "name": "email",
+              "source": "parameter"
+            },
+            {
+              "name": "name",
+              "source": "parameter"
+            },
+            {
+              "name": "phone",
+              "source": "additionalFields"
+            },
+            {
+              "name": "website",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ApiKeyAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "delivered",
+              "type": "boolean"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "ok",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "delivered",
+            "message",
+            "ok"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Invalid contact form data."
+          },
+          {
+            "status": "500",
+            "title": "Contact webhook is not configured."
+          },
+          {
+            "status": "502",
+            "title": "The contact webhook rejected the request or could not be reached."
+          }
+        ],
+        "unsupportedSemantics": []
+      }
+    }
+  ]
+}
